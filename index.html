@@ -7,5 +7,17 @@
 </head>
 <body>
 	<h1>敬请期待！</h1>
+	<script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://192.168.100.85:806/tbjapi/EsignTech/FirstUploadFile');
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var dataStr = xhr.responseText;
+                var data = JSON.parse(dataStr);
+                alert(data.code);
+            }
+        }
+    </script>
 </body>
 </html>
